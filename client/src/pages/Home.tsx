@@ -57,13 +57,25 @@ export default function Home() {
 
       {/* Trust Strip */}
       <Section padding="utility" className="border-y border-cv-line/50">
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-6">
           <p className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
-            Built for teams who run complex clouds
+            Trusted by
           </p>
-          <p className="cv-body text-cv-ink font-medium max-w-2xl mx-auto">
-            Automation-first FinOps with developer workflows—so savings don't wait for month-end.
-          </p>
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <img 
+              src="/assets/cloudverse-import/images/partners/drreddy.svg" 
+              alt="Dr. Reddy's" 
+              className="h-8 w-auto"
+            />
+            <img 
+              src="/assets/cloudverse-import/images/partners/infogain.svg" 
+              alt="Infogain" 
+              className="h-8 w-auto"
+            />
+            <span className="text-[15px] font-semibold text-cv-ink tracking-tight">MaxLife Insurance</span>
+            <span className="text-[15px] font-semibold text-cv-ink tracking-tight">Shaw Industries</span>
+            <span className="text-[15px] font-semibold text-cv-ink tracking-tight">SISL Infotech</span>
+          </div>
         </div>
       </Section>
 
