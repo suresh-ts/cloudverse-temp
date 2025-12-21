@@ -1,18 +1,20 @@
 import { BaseLayout } from "@/layouts/BaseLayout";
 import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
 import { track } from "@/lib/track";
-import { ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "CloudVerse™ — Cloud Financial Management";
+  }, []);
+
   return (
     <BaseLayout>
       {/* Hero */}
-      <Section padding="hero">
+      <Section padding="primary">
         <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-16">
-          {/* Left: Copy */}
           <div className="flex-1 text-left space-y-4 sm:space-y-6">
             <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
               CloudVerse™
@@ -21,23 +23,22 @@ export default function Home() {
               Cloud financial management for modern enterprises.
             </h1>
             <p className="text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[30px] text-cv-muted max-w-xl">
-              Real-time visibility, allocation, anomaly detection, and automated optimization across AWS, Azure, and GCP—built for Finance, Engineering, and platform teams in the AI era.
+              Visibility, allocation, anomalies, and automated optimization across cloud, data, and AI platforms—built for enterprise scale in the AI era.
             </p>
-            <div className="flex flex-col xs:flex-row items-start gap-3 sm:gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 pt-4">
               <Link href="/demo" data-track="cta_demo" onClick={() => track("cta_demo", { location: "hero" })}>
-                <Button size="lg" className="w-full xs:w-auto">
+                <Button size="lg" className="w-full sm:w-auto">
                   Book a demo
                 </Button>
               </Link>
               <Link href="/tour" data-track="cta_watch_tour" onClick={() => track("cta_watch_tour", { location: "hero" })}>
-                <Button variant="tertiary" size="lg" className="text-[14px] sm:text-[16px] lg:text-[17px] w-full xs:w-auto">
+                <Button variant="tertiary" size="lg" className="text-[14px] sm:text-[16px] lg:text-[17px] w-full sm:w-auto">
                   Watch 90-second tour
                 </Button>
               </Link>
             </div>
           </div>
           
-          {/* Right: Product Frame Skeleton */}
           <div className="flex-1 w-full hidden md:block">
             <div className="aspect-[4/3] w-full rounded-cv bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line overflow-hidden p-4 sm:p-6">
               <div className="h-full w-full flex flex-col gap-4">
@@ -79,58 +80,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Pillars */}
+      {/* Capabilities Row - Typography Only */}
       <Section padding="primary">
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10">
+        <div className="text-center max-w-3xl mx-auto mb-8 lg:mb-12">
           <h2 className="cv-h2">A single platform for visibility, accountability, and action.</h2>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          <Card>
-            <h3 className="text-[21px] font-semibold mb-3">Visibility</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+          <div className="text-left">
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Visibility</h3>
             <p className="cv-body text-cv-muted">
-              A real-time view of spend across providers, accounts, regions, and services—down to the resource when you need it.
+              Unified, real-time cost views across clouds.
             </p>
-          </Card>
-          <Card>
-            <h3 className="text-[21px] font-semibold mb-3">Allocation</h3>
+          </div>
+          <div className="text-left">
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Allocation</h3>
             <p className="cv-body text-cv-muted">
-              Showback and chargeback with rules, shared cost pools, and audit-ready exports Finance can trust.
+              Audit-ready showback and chargeback.
             </p>
-          </Card>
-          <Card>
-            <h3 className="text-[21px] font-semibold mb-3">Automation</h3>
+          </div>
+          <div className="text-left">
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Anomalies</h3>
             <p className="cv-body text-cv-muted">
-              Recommendations powered by 40+ ML models—applied automatically with guardrails and tracked as realized savings.
+              Detected and predicted spend spikes.
             </p>
-          </Card>
+          </div>
+          <div className="text-left">
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Automation</h3>
+            <p className="cv-body text-cv-muted">
+              ML-driven actions applied automatically.
+            </p>
+          </div>
         </div>
       </Section>
 
       {/* How It Works */}
-      <Section background="gray" padding="primary">
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 lg:mb-10">
+      <Section background="gray" padding="utility">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <h2 className="cv-h2 mb-3 sm:mb-4">How CloudVerse works</h2>
           <p className="text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[30px] text-cv-muted">
-            Connect your clouds, normalize billing data, and automate what you can—without slowing down delivery.
+            Connect once. Normalize everything. Automate what you can.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 text-left">
           <div className="relative pl-6 border-l-2 border-cv-ink/20 dark:border-cv-line">
-            <div className="text-[48px] font-bold text-cv-ink/20 dark:text-cv-muted/30 leading-none mb-2">01</div>
-            <h3 className="text-[22px] font-semibold mb-2">Connect</h3>
-            <p className="text-cv-muted">Read-only connections with scoped permissions.</p>
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Connect</h3>
+            <p className="text-cv-muted text-[15px]">Read-only connections with scoped permissions.</p>
           </div>
           <div className="relative pl-6 border-l-2 border-cv-ink/20 dark:border-cv-line">
-            <div className="text-[48px] font-bold text-cv-ink/20 dark:text-cv-muted/30 leading-none mb-2">02</div>
-            <h3 className="text-[22px] font-semibold mb-2">Normalize</h3>
-            <p className="text-cv-muted">Unified taxonomy for accounts, tags, services, and cost models.</p>
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Normalize</h3>
+            <p className="text-cv-muted text-[15px]">Unified taxonomy for accounts, tags, and services.</p>
           </div>
           <div className="relative pl-6 border-l-2 border-cv-ink/20 dark:border-cv-line">
-            <div className="text-[48px] font-bold text-cv-ink/20 dark:text-cv-muted/30 leading-none mb-2">03</div>
-            <h3 className="text-[22px] font-semibold mb-2">Automate</h3>
-            <p className="text-cv-muted">Apply safe actions, route the rest to owners, and measure outcomes.</p>
+            <h3 className="text-[18px] sm:text-[20px] font-semibold mb-2">Automate</h3>
+            <p className="text-cv-muted text-[15px]">Apply safe actions and measure outcomes.</p>
           </div>
         </div>
       </Section>
@@ -144,12 +148,12 @@ export default function Home() {
             </span>
             <h2 className="cv-h2">Cost visibility where engineers work.</h2>
             <p className="cv-body text-cv-muted max-w-md">
-              Bring cost context into daily engineering workflows—before changes ship.
+              Bring cost context into engineering workflows—before changes ship.
             </p>
             <div className="pt-2">
               <Link href="/platform">
                 <Button variant="tertiary" className="text-[14px] sm:text-[16px] lg:text-[17px]">
-                  Explore Developer FinOps
+                  Explore Developer FinOps →
                 </Button>
               </Link>
             </div>
@@ -169,12 +173,12 @@ export default function Home() {
             </span>
             <h2 className="cv-h2">Clean allocation starts with clean dimensions.</h2>
             <p className="cv-body text-cv-muted max-w-md">
-              Normalize tags, fix drift, and map resources to owners so chargeback holds up under scrutiny.
+              Normalize tags, fix drift, and map resources to owners—so chargeback holds up under scrutiny.
             </p>
             <div className="pt-2">
               <Link href="/platform">
                 <Button variant="tertiary" className="text-[14px] sm:text-[16px] lg:text-[17px]">
-                  Explore Tag Engine
+                  Explore Tag Engine →
                 </Button>
               </Link>
             </div>
@@ -185,21 +189,21 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Feature Band 3: Anomalies + Recommendations */}
+      {/* Feature Band 3: Anomalies + Automation */}
       <Section padding="primary">
         <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-12">
           <div className="flex-1 space-y-3 sm:space-y-4 text-left">
             <span className="cv-cap font-semibold tracking-widest uppercase text-cv-muted">
-              Anomalies + Recommendations
+              Anomalies + Automation
             </span>
-            <h2 className="cv-h2">Detect spikes. Predict risk. Take action.</h2>
+            <h2 className="cv-h2">Detect spikes. Predict risk. Act automatically.</h2>
             <p className="cv-body text-cv-muted max-w-md">
-              Detected and predicted anomalies with recommendation paths—so teams can respond before the bill does.
+              Detected and predicted anomalies with ML-driven actions—so teams respond before the bill does.
             </p>
             <div className="pt-2">
               <Link href="/platform">
                 <Button variant="tertiary" className="text-[14px] sm:text-[16px] lg:text-[17px]">
-                  Explore Automation
+                  Explore Automation →
                 </Button>
               </Link>
             </div>
@@ -210,39 +214,32 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Security Strip - Light */}
-      <Section padding="utility" className="border-y border-cv-line/50">
-        <div className="text-center max-w-2xl mx-auto space-y-4">
+      {/* Security - Typography Only */}
+      <Section padding="utility">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
           <h2 className="cv-h2">Security and compliance, built in.</h2>
           <p className="cv-body text-cv-muted">
-            Designed for enterprise environments—from access controls to auditability.
+            Designed for enterprise environments—from access control to auditability.
           </p>
           <p className="cv-cap font-semibold text-cv-muted pt-2">
             ISO 27001 • SOC 2 Type II
           </p>
-          <div className="pt-2">
-            <Link href="/security">
-              <Button variant="tertiary" className="text-[15px]">
-                Visit Security
-              </Button>
-            </Link>
-          </div>
         </div>
       </Section>
 
       {/* Final CTA */}
       <Section padding="primary" className="text-center">
-        <div className="max-w-2xl mx-auto space-y-4 sm:space-y-6">
+        <div className="max-w-2xl mx-auto space-y-4 sm:space-y-5">
           <h2 className="cv-h2">See CloudVerse™ on your data.</h2>
           <p className="cv-body text-cv-muted">
-            We'll map your spend structure, allocation model, and the fastest path to measurable savings.
+            We'll map your spend structure and the fastest path to measurable savings.
           </p>
-          <div className="flex flex-col xs:flex-row items-center justify-center gap-3 sm:gap-4 pt-2">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2">
             <Link href="/demo" data-track="cta_demo" onClick={() => track("cta_demo", { location: "bottom_cta" })}>
-              <Button size="lg" className="w-full xs:w-auto">Book a demo</Button>
+              <Button size="lg" className="w-full sm:w-auto">Book a demo</Button>
             </Link>
             <Link href="/contact" data-track="cta_contact" onClick={() => track("cta_contact", { location: "bottom_cta" })}>
-              <Button variant="secondary" size="lg" className="w-full xs:w-auto">Contact sales</Button>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">Contact sales</Button>
             </Link>
           </div>
         </div>
