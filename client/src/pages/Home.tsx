@@ -3,23 +3,27 @@ import { Section } from "@/components/Section";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { track } from "@/lib/track";
-import { ArrowRight, Check, Shield, BarChart3, PieChart, Zap } from "lucide-react";
+import { ArrowRight, BarChart3, PieChart, Zap } from "lucide-react";
 import { Link } from "wouter";
+import { Skeleton } from "@/components/Skeleton";
+import { FeatureBand } from "@/components/FeatureBand";
+import { SecurityStrip } from "@/components/SecurityStrip";
+import { CTA } from "@/components/CTA";
 
 export default function Home() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <Section className="pt-32 pb-16 md:pt-48 md:pb-32 text-center">
-        <h1 className="max-w-4xl mx-auto mb-6 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-transparent">
+      <Section padding="hero" className="text-center">
+        <h1 className="cv-h1 max-w-4xl mx-auto mb-6">
           Cloud financial management for modern engineering.
         </h1>
-        <p className="text-[21px] leading-[32px] text-muted-foreground max-w-2xl mx-auto mb-10">
+        <p className="text-[21px] leading-[32px] text-cv-muted max-w-2xl mx-auto mb-10">
           Real-time visibility, allocation, and AI-driven optimization across AWS, Azure, and GCP—built for Finance and Engineering.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <Link href="/demo" onClick={() => track("cta_demo", { location: "hero" })}>
-            <Button size="lg" className="w-full sm:w-auto">
+            <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-primary/20">
               Book a demo
             </Button>
           </Link>
@@ -30,122 +34,118 @@ export default function Home() {
           </Link>
         </div>
         
-        {/* Hero Image/Screenshot Placeholder */}
-        <div className="relative mx-auto max-w-[1000px] aspect-[16/9] bg-gradient-to-b from-secondary/50 to-secondary rounded-[24px] border border-border/50 shadow-2xl overflow-hidden flex items-center justify-center group">
-          <div className="absolute inset-0 bg-secondary/10 backdrop-blur-[1px] z-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-             <span className="text-sm font-medium text-muted-foreground">Interactive Demo Preview</span>
-          </div>
-          <img 
-             src="/assets/cloudverse-import/hero-dashboard.png" 
-             alt="CloudVerse Dashboard" 
-             className="w-full h-full object-cover"
-             onError={(e) => {
-               // Fallback if image not imported yet
-               e.currentTarget.style.display = 'none';
-               e.currentTarget.parentElement!.classList.add('bg-slate-100');
-               e.currentTarget.parentElement!.innerHTML += '<div class="text-slate-400 font-medium">Dashboard Screenshot Placeholder</div>';
-             }}
-          />
+        <p className="cv-cap text-cv-muted mb-16">
+          ISO 27001 and SOC 2 Type II certified.
+        </p>
+        
+        {/* Skeleton UI Hero */}
+        <div className="mx-auto max-w-[1000px] aspect-[16/9]">
+           <Skeleton className="shadow-2xl border-cv-line" />
         </div>
       </Section>
 
-      {/* Trusted By */}
-      <Section className="py-12 border-y border-border/40">
-        <p className="text-center text-[13px] font-semibold text-muted-foreground mb-8 uppercase tracking-widest">Trusted by engineering teams at</p>
-        <div className="flex flex-wrap justify-center gap-12 opacity-60 grayscale">
-           {/* Placeholders for logos */}
-           {['Acme Corp', 'GlobalTech', 'Nebula', 'Vertex', 'Horizon'].map(company => (
-             <div key={company} className="text-xl font-bold font-serif">{company}</div>
+      {/* Trusted Strip */}
+      <Section padding="utility" className="border-y border-cv-line/50">
+        <div className="text-center space-y-3">
+          <p className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
+            Trusted by teams who run complex clouds
+          </p>
+          <p className="cv-body text-cv-ink font-medium">
+            Built for multi-account, multi-org environments—where accountability matters.
+          </p>
+        </div>
+      </Section>
+
+      {/* Pillars */}
+      <Section padding="primary">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+           <h2 className="cv-h2 mb-4">A single platform for visibility, accountability, and savings.</h2>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card hover>
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
+              <BarChart3 className="w-6 h-6" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-[21px] font-semibold mb-3">Visibility</h3>
+            <p className="cv-body text-cv-muted">
+              A real-time view of spend across providers, accounts, regions, and services—down to the resource when you need it.
+            </p>
+          </Card>
+          <Card hover>
+            <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
+              <PieChart className="w-6 h-6" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-[21px] font-semibold mb-3">Allocation</h3>
+            <p className="cv-body text-cv-muted">
+              Showback and chargeback with rules, shared cost pools, and audit-ready exports that Finance can trust.
+            </p>
+          </Card>
+          <Card hover>
+            <div className="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6">
+              <Zap className="w-6 h-6" strokeWidth={1.5} />
+            </div>
+            <h3 className="text-[21px] font-semibold mb-3">Optimization</h3>
+            <p className="cv-body text-cv-muted">
+              Recommendations prioritized by impact, effort, and risk—so Engineering can act with confidence.
+            </p>
+          </Card>
+        </div>
+      </Section>
+
+      {/* How It Works */}
+      <Section background="gray" padding="primary">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="cv-h2 mb-6">How CloudVerse™ works</h2>
+          <p className="text-[21px] leading-[32px] text-cv-muted">
+            Connect your clouds, normalize billing data, and take action—without slowing down delivery.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8 text-left">
+           {[
+             { title: "Connect", body: "Read-only connections with scoped permissions." },
+             { title: "Normalize", body: "Unified accounts, tags, services, and cost models across providers." },
+             { title: "Act", body: "Build views, allocate costs, and track realized savings over time." }
+           ].map((step, i) => (
+             <div key={step.title} className="relative pl-6 border-l-2 border-cv-line/50">
+                <div className="text-[13px] font-bold text-cv-muted mb-2 uppercase tracking-widest">Step 0{i+1}</div>
+                <h3 className="text-[24px] font-semibold mb-2">{step.title}</h3>
+                <p className="text-cv-muted">{step.body}</p>
+             </div>
            ))}
         </div>
       </Section>
 
-      {/* 3 Pillars */}
-      <Section>
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card hover>
-            <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6">
-              <BarChart3 className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Visibility</h3>
-            <p className="text-muted-foreground">
-              See all your cloud costs in one place with real-time dashboards and granular breakdown.
-            </p>
-          </Card>
-          <Card hover>
-            <div className="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6">
-              <PieChart className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Allocation</h3>
-            <p className="text-muted-foreground">
-              Automatically attribute 100% of costs to teams, features, and products with AI tagging.
-            </p>
-          </Card>
-          <Card hover>
-            <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center mb-6">
-              <Zap className="w-6 h-6" />
-            </div>
-            <h3 className="text-xl font-semibold mb-3">Optimization</h3>
-            <p className="text-muted-foreground">
-              Cut waste with automated recommendations for idle resources, rightsizing, and spots.
-            </p>
-          </Card>
-        </div>
-      </Section>
+      {/* Feature Bands */}
+      <FeatureBand 
+        eyebrow="DYNAMIC PERSPECTIVES"
+        title="Cost views that match how your business runs."
+        body="Create stakeholder-ready views by product, environment, team, region, service, or custom dimensions. Drill down from portfolio to resource without rebuilding dashboards."
+        linkText="Explore Platform"
+        linkHref="/platform"
+      />
 
-      {/* How it works */}
-      <Section background="gray">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-6">How CloudVerse works</h2>
-          <p className="text-muted-foreground">
-            We connect to your cloud providers, normalize the billing data, and provide actionable insights in minutes.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-4 gap-4 text-center">
-            {['Connect', 'Normalize', 'Act', 'Automate'].map((step, i) => (
-              <div key={step} className="relative">
-                 <div className="text-[60px] font-bold text-border/40 mb-2">0{i+1}</div>
-                 <h4 className="text-lg font-semibold">{step}</h4>
-              </div>
-            ))}
-        </div>
-      </Section>
-      
-      {/* Security Strip */}
-      <Section className="py-24">
-        <div className="flex flex-col md:flex-row items-center justify-between bg-zinc-900 text-white rounded-[32px] p-12 overflow-hidden relative">
-          <div className="relative z-10 max-w-xl">
-            <h2 className="text-3xl font-semibold mb-4 text-white">Enterprise-grade Security</h2>
-            <p className="text-zinc-400 mb-8 text-lg">
-              SOC 2 Type II certified and GDPR compliant. Your data is encrypted at rest and in transit.
-            </p>
-            <div className="flex gap-4">
-               <div className="flex items-center gap-2 text-sm font-medium bg-white/10 px-4 py-2 rounded-full">
-                 <Shield className="w-4 h-4" /> SOC 2 Type II
-               </div>
-               <div className="flex items-center gap-2 text-sm font-medium bg-white/10 px-4 py-2 rounded-full">
-                 <Shield className="w-4 h-4" /> ISO 27001
-               </div>
-            </div>
-          </div>
-          {/* Abstract Security Graphic */}
-          <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-indigo-600/20 to-transparent pointer-events-none"></div>
-        </div>
-      </Section>
+      <FeatureBand 
+        eyebrow="ALLOCATION"
+        title="Chargeback that holds up under scrutiny."
+        body="Allocate shared costs, map spend to business units, and export clear ledgers for review. Keep Finance and Engineering aligned on a single source of truth."
+        linkText="Explore Allocation"
+        linkHref="/solutions"
+        reversed
+      />
 
-      {/* CTA */}
-      <Section className="text-center pb-32">
-        <h2 className="mb-6">Ready to optimize your cloud spend?</h2>
-        <div className="flex justify-center gap-4">
-          <Link href="/demo">
-            <Button size="lg">Get Started</Button>
-          </Link>
-          <Link href="/contact">
-            <Button variant="secondary" size="lg">Contact Sales</Button>
-          </Link>
-        </div>
-      </Section>
+      <FeatureBand 
+        eyebrow="OPTIMIZATION"
+        title="Actions engineers will actually take."
+        body="Identify waste, rightsize safely, and prioritize the changes that move the bill. Track savings as “realized,” not just estimated."
+        linkText="Explore Optimization"
+        linkHref="/platform"
+      />
+
+      {/* Security & CTA */}
+      <SecurityStrip />
+      <CTA />
     </BaseLayout>
   );
 }
