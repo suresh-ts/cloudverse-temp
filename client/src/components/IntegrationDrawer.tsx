@@ -16,6 +16,10 @@ export function IntegrationDrawer({ integration, onClose }: IntegrationDrawerPro
     "Coming soon": "bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20"
   };
 
+  // Limit to 5 items per list
+  const ingestItems = integration.whatWeIngest.slice(0, 5);
+  const outputItems = integration.outputs.slice(0, 5);
+
   return (
     <>
       {/* Backdrop */}
@@ -25,42 +29,40 @@ export function IntegrationDrawer({ integration, onClose }: IntegrationDrawerPro
       />
       
       {/* Drawer */}
-      <div className="fixed right-0 top-0 bottom-0 w-full sm:w-[500px] bg-cv-surface dark:bg-cv-surface border-l border-cv-line dark:border-cv-line z-50 overflow-y-auto">
+      <div className="fixed right-0 top-0 bottom-0 w-full sm:w-[480px] bg-cv-surface dark:bg-cv-surface border-l border-cv-line dark:border-cv-line z-50 overflow-y-auto">
         {/* Header */}
-        <div className="sticky top-0 bg-cv-surface dark:bg-cv-surface border-b border-cv-line dark:border-cv-line p-6 flex items-start justify-between gap-4">
-          <div className="flex-1">
-            <h2 className="text-xl font-semibold text-cv-ink dark:text-cv-ink mb-2">
-              {integration.name}
-            </h2>
-            <p className="text-sm text-cv-muted">
+        <div className="sticky top-0 bg-cv-surface dark:bg-cv-surface border-b border-cv-line dark:border-cv-line p-5 md:p-6 flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-2">
+              <h2 className="text-lg md:text-xl font-semibold text-cv-ink dark:text-cv-ink">
+                {integration.name}
+              </h2>
+              <span className={`text-xs font-medium px-2 py-1 rounded border flex-shrink-0 whitespace-nowrap ${statusColor[integration.status]}`}>
+                {integration.status}
+              </span>
+            </div>
+            <p className="text-sm text-cv-muted line-clamp-2">
               {integration.short}
             </p>
           </div>
           <button
             onClick={onClose}
-            className="text-cv-muted hover:text-cv-ink dark:text-cv-muted dark:hover:text-cv-ink transition-colors flex-shrink-0"
+            className="text-cv-muted hover:text-cv-ink dark:text-cv-muted dark:hover:text-cv-ink transition-colors flex-shrink-0 mt-1"
           >
             <X size={20} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="p-6 space-y-8">
-          {/* Status Badge */}
-          <div>
-            <span className={`text-xs font-medium px-3 py-1.5 rounded border inline-block ${statusColor[integration.status]}`}>
-              {integration.status}
-            </span>
-          </div>
-
-          {/* What CloudVerse Ingests */}
-          <div>
-            <h3 className="text-sm font-semibold text-cv-ink dark:text-cv-ink mb-3">
-              What CloudVerse ingests
+        <div className="divide-y divide-white/10">
+          {/* What we ingest */}
+          <div className="px-5 md:px-6 py-5">
+            <h3 className="text-xs uppercase tracking-widest text-cv-muted mb-3">
+              What we ingest
             </h3>
             <ul className="space-y-2">
-              {integration.whatWeIngest.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-cv-muted">
+              {ingestItems.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-sm leading-6 text-cv-muted">
                   <span className="text-primary font-semibold mt-0.5 flex-shrink-0">•</span>
                   <span>{item}</span>
                 </li>
@@ -68,14 +70,14 @@ export function IntegrationDrawer({ integration, onClose }: IntegrationDrawerPro
             </ul>
           </div>
 
-          {/* What it Unlocks */}
-          <div>
-            <h3 className="text-sm font-semibold text-cv-ink dark:text-cv-ink mb-3">
+          {/* What it unlocks */}
+          <div className="px-5 md:px-6 py-5">
+            <h3 className="text-xs uppercase tracking-widest text-cv-muted mb-3">
               What it unlocks
             </h3>
             <ul className="space-y-2">
-              {integration.outputs.map((item, idx) => (
-                <li key={idx} className="flex items-start gap-3 text-sm text-cv-muted">
+              {outputItems.map((item, idx) => (
+                <li key={idx} className="flex items-start gap-3 text-sm leading-6 text-cv-muted">
                   <span className="text-primary font-semibold mt-0.5 flex-shrink-0">•</span>
                   <span>{item}</span>
                 </li>
@@ -83,35 +85,51 @@ export function IntegrationDrawer({ integration, onClose }: IntegrationDrawerPro
             </ul>
           </div>
 
-          {/* Setup */}
-          <div className="border-t border-cv-line dark:border-cv-line pt-6">
-            <h3 className="text-sm font-semibold text-cv-ink dark:text-cv-ink mb-3">
-              Setup
+          {/* Setup requirements */}
+          <div className="px-5 md:px-6 py-5">
+            <h3 className="text-xs uppercase tracking-widest text-cv-muted mb-3">
+              Setup requirements
             </h3>
-            <div className="space-y-3 text-sm">
-              <div>
-                <span className="text-cv-muted/60 block mb-1">Method</span>
-                <p className="text-cv-muted">{integration.setup.method}</p>
-              </div>
-              <div>
-                <span className="text-cv-muted/60 block mb-1">Time to value</span>
-                <p className="text-cv-muted">{integration.setup.timeToValue}</p>
-              </div>
-              <div>
-                <span className="text-cv-muted/60 block mb-1">Permissions</span>
-                <p className="text-cv-muted">{integration.setup.permissions}</p>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4 md:p-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-cv-muted mb-1">
+                    Method
+                  </div>
+                  <p className="text-sm font-medium text-cv-ink dark:text-cv-ink">
+                    {integration.setup.method}
+                  </p>
+                </div>
+                <div>
+                  <div className="text-xs uppercase tracking-widest text-cv-muted mb-1">
+                    Time to value
+                  </div>
+                  <p className="text-sm font-medium text-cv-ink dark:text-cv-ink">
+                    {integration.setup.timeToValue}
+                  </p>
+                </div>
+                <div className="md:col-span-2">
+                  <div className="text-xs uppercase tracking-widest text-cv-muted mb-1">
+                    Permissions
+                  </div>
+                  <p className="text-sm font-medium text-cv-ink dark:text-cv-ink">
+                    {integration.setup.permissions}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Actions */}
-          <div className="flex gap-3 pt-6 border-t border-cv-line dark:border-cv-line">
-            <Button variant="secondary" size="lg" className="flex-1">
-              Request access
-            </Button>
-            <Button variant="tertiary" size="lg" className="flex-1">
-              Setup docs
-            </Button>
+          <div className="px-5 md:px-6 py-5 border-t border-white/10">
+            <div className="flex gap-3">
+              <Button variant="secondary" size="lg" className="flex-1">
+                Request access
+              </Button>
+              <Button variant="tertiary" size="lg" className="flex-1">
+                Setup docs
+              </Button>
+            </div>
           </div>
         </div>
       </div>
