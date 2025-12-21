@@ -66,7 +66,18 @@ export default function Platform() {
             </div>
 
             <div className="flex-1 w-full hidden md:block">
-              <img src="/assets/cloudverse-import/images/platform/Dashboard.svg" alt="CloudVerse Dashboard" className="w-full h-auto rounded-cv border border-cv-line object-cover" />
+              <div className="aspect-[4/3] w-full rounded-cv bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line overflow-hidden p-4 sm:p-6">
+                <div className="h-full w-full flex flex-col gap-4">
+                  <div className="h-5 sm:h-6 w-1/3 bg-cv-line/60 rounded-md"></div>
+                  <div className="flex gap-3 sm:gap-4 flex-1">
+                    <div className="w-1/4 h-full bg-cv-line/40 rounded-lg"></div>
+                    <div className="w-3/4 flex flex-col gap-3 sm:gap-4">
+                      <div className="h-1/3 w-full bg-cv-line/40 rounded-lg"></div>
+                      <div className="h-2/3 w-full bg-cv-line/40 rounded-lg"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
