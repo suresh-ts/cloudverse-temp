@@ -126,11 +126,40 @@ export default function Security() {
             </div>
 
             {/* Export controls */}
-            <div className="flex items-start gap-4 py-4 lg:py-5 lg:border-l lg:pl-8">
+            <div className="flex items-start gap-4 py-4 lg:py-5 border-b border-white/10 lg:border-b-0 lg:border-l lg:pl-8 lg:border-r-0">
               <div className="min-w-0">
                 <h4 className="text-sm font-semibold text-cv-ink mb-1">Export controls</h4>
                 <p className="text-sm text-cv-muted">Controlled export for reports and billing data.</p>
               </div>
+            </div>
+
+            {/* Private & air-gapped deployment */}
+            <div className="flex items-start gap-4 py-4 lg:py-5 lg:border-r lg:pr-8">
+              <div className="min-w-0">
+                <h4 className="text-sm font-semibold text-cv-ink mb-1">Private & air-gapped deployment</h4>
+                <p className="text-sm text-cv-muted">Deployment options for regulated environments, including private and air-gapped setups.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deployment Options */}
+      <section className="py-cv-sec-md border-t border-cv-line">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+          <h2 className="cv-h2 mb-6 text-center">Deployment options</h2>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 py-2 border-b border-white/10">
+              <span className="text-primary font-semibold mt-0.5 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Private deployment (customer-controlled environment)</span>
+            </div>
+            <div className="flex items-start gap-3 py-2 border-b border-white/10">
+              <span className="text-primary font-semibold mt-0.5 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Air-gapped deployment options for regulated environments</span>
+            </div>
+            <div className="flex items-start gap-3 py-2">
+              <span className="text-primary font-semibold mt-0.5 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Enterprise onboarding and security review support</span>
             </div>
           </div>
         </div>

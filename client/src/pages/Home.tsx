@@ -239,6 +239,9 @@ export default function Home() {
           <p className="cv-body text-cv-muted">
             Designed for enterprise environments—from access control to auditability.
           </p>
+          <p className="text-sm text-cv-muted/80">
+            Private deployment options—including air-gapped environments—available for regulated enterprises.
+          </p>
           <p className="cv-cap font-semibold text-cv-muted pt-2">
             ISO 27001 • SOC 2 Type II
           </p>
