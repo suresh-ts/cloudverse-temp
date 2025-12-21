@@ -53,8 +53,8 @@ export default function Pricing() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center space-y-4 sm:space-y-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container text-center space-y-4 sm:space-y-6 max-w-[720px] mx-auto">
           <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
             Pricing
           </span>
@@ -66,8 +66,8 @@ export default function Pricing() {
       </section>
 
       {/* Pricing Plans */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {plans.map((plan, idx) => (
               <div key={idx} className="p-8 rounded-2xl border border-white/10 dark:border-white/10 bg-white/2.5 dark:bg-white/2.5 flex flex-col">
@@ -108,8 +108,8 @@ export default function Pricing() {
       </section>
 
       {/* What's Included */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <h2 className="cv-h2 mb-10 text-center">What's included with CloudVerse</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {capabilities.map((cap, idx) => (
@@ -122,8 +122,8 @@ export default function Pricing() {
       </section>
 
       {/* Usage & Scale */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-6 text-center">Designed for enterprise scale.</h2>
           <p className="text-[15px] leading-[24px] text-cv-muted mb-6 text-center">
             CloudVerse supports multi-account, multi-org, and multi-cloud environments. Pricing scales with usage and complexity—not arbitrary limits.
@@ -150,8 +150,8 @@ export default function Pricing() {
       </section>
 
       {/* Enterprise & Custom */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-3 text-center">Enterprise and custom deployments</h2>
           <p className="text-sm text-cv-muted mb-6 text-center">
             For complex environments, CloudVerse offers custom pricing and deployment options aligned to your architecture and governance needs.
@@ -185,8 +185,8 @@ export default function Pricing() {
       </section>
 
       {/* FAQ */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-10 text-center">Questions?</h2>
           <div className="space-y-6">
             {[
@@ -225,8 +225,8 @@ export default function Pricing() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[720px] text-center">
           <h2 className="cv-h2 mb-3">See CloudVerse on your data.</h2>
           <p className="text-sm text-cv-muted mb-6">
             We'll walk through your environment and recommend the right plan.

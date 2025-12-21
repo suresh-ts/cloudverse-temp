@@ -7,6 +7,7 @@ interface SectionProps {
   id?: string;
   background?: "white" | "gray";
   padding?: "hero" | "primary" | "utility" | "none";
+  container?: "default" | "wide" | "full" | "none";
 }
 
 export function Section({ 
@@ -14,8 +15,16 @@ export function Section({
   className, 
   id, 
   background = "white",
-  padding = "primary" 
+  padding = "primary",
+  container = "default"
 }: SectionProps) {
+  const containerClass = {
+    default: "cv-container",
+    wide: "cv-container-wide",
+    full: "cv-container-full",
+    none: ""
+  };
+
   return (
     <section
       id={id}
@@ -23,17 +32,21 @@ export function Section({
         "w-full",
         background === "gray" ? "bg-cv-surface2" : "bg-cv-surface",
         {
-          "py-cv-sec-xl": padding === "hero",
-          "py-cv-sec-lg": padding === "primary",
-          "py-cv-sec-md": padding === "utility",
+          "py-14 sm:py-20 lg:py-24": padding === "hero",
+          "py-14 sm:py-16 lg:py-20": padding === "primary",
+          "py-10 sm:py-12 lg:py-14": padding === "utility",
           "py-0": padding === "none",
         },
         className
       )}
     >
-      <div className="mx-auto max-w-[1200px] px-6">
-        {children}
-      </div>
+      {container === "none" ? (
+        children
+      ) : (
+        <div className={containerClass[container]}>
+          {children}
+        </div>
+      )}
     </section>
   );
 }

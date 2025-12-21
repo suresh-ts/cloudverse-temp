@@ -40,8 +40,8 @@ export default function Platform() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <section className="py-cv-sec-lg lg:py-cv-sec-xl">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container-full">
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-16">
             <div className="flex-1 text-left space-y-4 sm:space-y-6 max-w-[620px]">
               <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
@@ -84,8 +84,8 @@ export default function Platform() {
       </section>
 
       {/* Capabilities Grid */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="cv-container-full">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="cv-h2 mb-3">What you get with CloudVerse</h2>
             <p className="text-[15px] sm:text-[16px] lg:text-[17px] leading-[24px] sm:leading-[26px] lg:leading-[28px] text-cv-muted">
@@ -105,15 +105,15 @@ export default function Platform() {
       </section>
 
       {/* Feature Tabs Island */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="cv-container-full">
           <FeatureTabs />
         </div>
       </section>
 
       {/* Workflow Strip */}
-      <section className="py-cv-sec-md border-y border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="py-10 sm:py-12 lg:py-14 border-y border-cv-line">
+        <div className="cv-container-full">
           <div className="text-center mb-8">
             <h2 className="cv-h2">How it fits into your workflow</h2>
           </div>
@@ -135,8 +135,8 @@ export default function Platform() {
       </section>
 
       {/* Security Strip */}
-      <section className="py-cv-sec-md">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <section className="py-10 sm:py-12 lg:py-14">
+        <div className="cv-container text-center">
           <div className="max-w-2xl mx-auto space-y-3">
             <h2 className="cv-h2">Security and compliance, built in.</h2>
             <p className="cv-body text-cv-muted">
@@ -150,8 +150,8 @@ export default function Platform() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20">
+        <div className="cv-container text-center">
           <div className="max-w-2xl mx-auto space-y-4 sm:space-y-5">
             <h2 className="cv-h2">Get a platform view of your cloud economics.</h2>
             <p className="cv-body text-cv-muted">

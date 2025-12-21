@@ -131,7 +131,27 @@
 }
 
 @layer components {
+  /* Container utilities */
   .cv-container {
-    @apply max-w-[1200px] mx-auto px-4 sm:px-6;
+    @apply max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12;
+  }
+  .cv-container-wide {
+    @apply max-w-[1440px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12;
+  }
+  .cv-container-full {
+    @apply max-w-[1600px] mx-auto px-5 sm:px-6 lg:px-10 xl:px-12;
+  }
+  
+  /* Section spacing tokens */
+  .cv-section-pad {
+    @apply py-14 sm:py-16 lg:py-20;
+  }
+  .cv-section-gap {
+    @apply gap-8 sm:gap-10 lg:gap-12;
+  }
+  
+  /* Eyebrow text */
+  .cv-eyebrow {
+    @apply text-xs tracking-[0.25em] uppercase text-cv-muted;
   }
 }

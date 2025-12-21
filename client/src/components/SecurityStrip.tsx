@@ -22,10 +22,11 @@ export function SecurityStrip() {
           </div>
           
           <div className="pt-4">
-            <Link href="/security">
-               <a className="inline-flex items-center text-primary-foreground hover:opacity-80 transition-opacity font-medium">
-                 Visit Security <span className="ml-1">→</span>
-               </a>
+            <Link 
+              href="/security"
+              className="inline-flex items-center text-primary-foreground hover:opacity-80 transition-opacity font-medium"
+            >
+              Visit Security <span className="ml-1">→</span>
             </Link>
           </div>
         </div>

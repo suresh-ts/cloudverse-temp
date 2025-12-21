@@ -12,8 +12,8 @@ export default function Company() {
   return (
     <BaseLayout>
       {/* Intro */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center space-y-4 sm:space-y-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container text-center space-y-4 sm:space-y-6 max-w-[720px] mx-auto">
           <h1 className="cv-h1">About CloudVerse™</h1>
           <p className="text-[15px] sm:text-[16px] lg:text-[17px] leading-[24px] sm:leading-[26px] lg:leading-[28px] text-cv-muted">
             CloudVerse builds cloud financial management software for modern enterprises operating across cloud, data, and AI platforms.
@@ -22,8 +22,8 @@ export default function Company() {
       </section>
 
       {/* What We Do */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-6 text-center">What we do</h2>
           <p className="text-sm text-cv-muted text-center mb-8">
             We help organizations gain visibility, accountability, and control over cloud spend—without slowing teams down.
@@ -50,8 +50,8 @@ export default function Company() {
       </section>
 
       {/* How We Work */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-8 text-center">How we work</h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
@@ -75,8 +75,8 @@ export default function Company() {
       </section>
 
       {/* Trust & Compliance */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-6 text-center">Trust and security</h2>
           <p className="text-sm text-cv-muted text-center mb-8">
             CloudVerse is built for enterprise environments with a focus on security, access control, and auditability.
@@ -103,8 +103,8 @@ export default function Company() {
       </section>
 
       {/* Contact */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[720px] text-center">
           <h2 className="cv-h2 mb-3">Get in touch</h2>
           <p className="text-sm text-cv-muted mb-6">
             To learn more about CloudVerse, request a demo or contact our team.
@@ -125,8 +125,8 @@ export default function Company() {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[720px] text-center">
           <h2 className="cv-h2 mb-6">See CloudVerse on your data.</h2>
           <Link href="/demo" onClick={() => track("cta_demo", { location: "company_footer" })}>
             <Button size="lg">

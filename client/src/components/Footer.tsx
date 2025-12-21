@@ -36,28 +36,33 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-secondary/30 pt-24 pb-12 border-t border-border mt-auto">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-16">
-          <div className="col-span-2">
-             <Link href="/" onClick={() => track("footer_home")}>
-              <a className="text-xl font-bold tracking-tight mb-4 block">CloudVerse</a>
+    <footer className="bg-secondary/30 pt-16 sm:pt-20 lg:pt-24 pb-10 sm:pb-12 border-t border-border mt-auto">
+      <div className="cv-container">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 mb-12 sm:mb-16">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2">
+            <Link 
+              href="/" 
+              onClick={() => track("footer_home")}
+              className="text-xl font-bold tracking-tight mb-4 block"
+            >
+              CloudVerse
             </Link>
-            <p className="text-muted-foreground text-[15px] max-w-xs">
+            <p className="text-muted-foreground text-[14px] sm:text-[15px] max-w-xs">
               Cloud financial management for modern engineering teams. Visibility, allocation, and optimization in one platform.
             </p>
           </div>
 
           {footerLinks.map((column) => (
             <div key={column.title}>
-              <h4 className="font-semibold text-[13px] text-foreground mb-4">{column.title}</h4>
-              <ul className="space-y-3">
+              <h4 className="font-semibold text-[13px] text-foreground mb-3 sm:mb-4">{column.title}</h4>
+              <ul className="space-y-2 sm:space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
-                    <Link href={link.href}>
-                      <a className="text-[13px] text-muted-foreground hover:text-primary transition-colors">
-                        {link.label}
-                      </a>
+                    <Link 
+                      href={link.href}
+                      className="text-[13px] text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {link.label}
                     </Link>
                   </li>
                 ))}
@@ -66,16 +71,22 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[13px] text-muted-foreground">
+        <div className="pt-6 sm:pt-8 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-[12px] sm:text-[13px] text-muted-foreground text-center sm:text-left">
             © {currentYear} CloudVerse Inc. All rights reserved.
           </p>
-          <div className="flex gap-6">
-            <Link href="/legal/privacy">
-              <a className="text-[13px] text-muted-foreground hover:text-foreground">Privacy</a>
+          <div className="flex gap-4 sm:gap-6">
+            <Link 
+              href="/legal/privacy"
+              className="text-[12px] sm:text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Privacy
             </Link>
-            <Link href="/legal/terms">
-               <a className="text-[13px] text-muted-foreground hover:text-foreground">Terms</a>
+            <Link 
+              href="/legal/terms"
+              className="text-[12px] sm:text-[13px] text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Terms
             </Link>
           </div>
         </div>

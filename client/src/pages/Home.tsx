@@ -21,8 +21,8 @@ export default function Home() {
   return (
     <BaseLayout>
       {/* Hero - Wide Layout */}
-      <section className="py-cv-sec-lg lg:py-cv-sec-xl">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container-full">
           <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-16">
             <div className="flex-1 text-left space-y-4 sm:space-y-6 max-w-[620px]">
               <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
@@ -67,8 +67,8 @@ export default function Home() {
       </section>
 
       {/* Customer Logos */}
-      <section className="py-8 lg:py-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section className="py-10 sm:py-12 lg:py-14">
+        <div className="cv-container">
           <p className="text-center text-[15px] leading-[24px] text-cv-muted mb-8">
             Used by FinOps teams at leading enterprises.
           </p>

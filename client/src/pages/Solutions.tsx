@@ -13,8 +13,8 @@ export default function Solutions() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <section className="py-cv-sec-md">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12 text-center space-y-4 sm:space-y-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container text-center space-y-4 sm:space-y-6 max-w-[800px] mx-auto">
           <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
             Solutions
           </span>
@@ -26,8 +26,8 @@ export default function Solutions() {
       </section>
 
       {/* Finance Section */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text */}
             <div className="max-w-[640px]">
@@ -72,8 +72,8 @@ export default function Solutions() {
       </section>
 
       {/* Engineering Section */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Preview Panel */}
             <div className="hidden lg:block order-last lg:order-first">
@@ -118,8 +118,8 @@ export default function Solutions() {
       </section>
 
       {/* IT / Platform Section */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Text */}
             <div className="max-w-[640px]">
@@ -164,8 +164,8 @@ export default function Solutions() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container text-center">
           <div className="max-w-[720px] mx-auto space-y-4">
             <h2 className="cv-h2">See CloudVerse on your data.</h2>
             <p className="cv-body text-cv-muted">

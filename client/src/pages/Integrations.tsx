@@ -36,8 +36,8 @@ export default function Integrations() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12 space-y-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container-full space-y-6">
           <div className="max-w-[900px]">
             <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase mb-4 inline-block">
               Integrations
@@ -63,8 +63,8 @@ export default function Integrations() {
       </section>
 
       {/* Normalization Layer Strip */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <h2 className="cv-h2 mb-10 text-center">A normalization layer, not a connector list.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
@@ -90,8 +90,8 @@ export default function Integrations() {
       </section>
 
       {/* Integrations Explorer */}
-      <section className="py-cv-sec-lg border-t border-cv-line" id="explorer">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line" id="explorer">
+        <div className="cv-container-full">
           {/* Search */}
           <div className="mb-8">
             <input
@@ -166,8 +166,8 @@ export default function Integrations() {
       </section>
 
       {/* Enterprise Connectors */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container-full">
           <h2 className="cv-h2 mb-10">Built for enterprise access patterns.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
@@ -198,8 +198,8 @@ export default function Integrations() {
       </section>
 
       {/* Request Integration CTA */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px] text-center">
           <h2 className="cv-h2 mb-3">Need a connector that isn't listed?</h2>
           <p className="cv-body text-cv-muted mb-6">
             Tell us what you use—we'll prioritize it with you.
@@ -213,8 +213,8 @@ export default function Integrations() {
       </section>
 
       {/* FAQ */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-10 text-center">Questions?</h2>
           <div className="space-y-4">
             {[

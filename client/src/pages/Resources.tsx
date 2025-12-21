@@ -12,8 +12,8 @@ export default function Resources() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container-full">
           <div className="max-w-[760px] mx-auto text-center space-y-4 sm:space-y-6">
             <span className="text-xs uppercase tracking-widest text-cv-muted">CloudVerse™ Resources</span>
             <h1 className="cv-h1">Guides and documentation for enterprise FinOps.</h1>
@@ -37,8 +37,8 @@ export default function Resources() {
       </section>
 
       {/* Two Primary Cards */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[1000px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Guides Card */}
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
@@ -66,8 +66,8 @@ export default function Resources() {
       </section>
 
       {/* Featured Guides */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[1000px]">
           <h2 className="cv-h2 mb-8">Featured</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredGuides.slice(0, 3).map((guide) => (
@@ -95,8 +95,8 @@ export default function Resources() {
       </section>
 
       {/* Browse by Category */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[1000px]">
           <h2 className="cv-h2 mb-6">Browse by category</h2>
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
@@ -113,8 +113,8 @@ export default function Resources() {
       </section>
 
       {/* Product Updates CTA */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px] text-center">
           <h3 className="text-lg font-semibold text-cv-ink mb-2">Product updates</h3>
           <p className="text-sm text-cv-muted mb-4">
             New connectors, automation paths, and playbooks.

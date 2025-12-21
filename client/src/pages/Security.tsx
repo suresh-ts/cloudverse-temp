@@ -12,8 +12,8 @@ export default function Security() {
   return (
     <BaseLayout>
       {/* Hero */}
-      <section className="py-cv-sec-lg">
-        <div className="max-w-[760px] mx-auto px-6 lg:px-12 text-center space-y-4 sm:space-y-6">
+      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+        <div className="cv-container text-center space-y-4 sm:space-y-6 max-w-[760px] mx-auto">
           <span className="text-xs uppercase tracking-widest text-cv-muted">Security</span>
           <h1 className="cv-h1">Security and compliance, built in.</h1>
           <p className="text-[15px] sm:text-[16px] lg:text-[17px] leading-[24px] sm:leading-[26px] lg:leading-[28px] text-cv-muted">
@@ -26,8 +26,8 @@ export default function Security() {
       </section>
 
       {/* Security Principles */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[1000px]">
           <h2 className="cv-h2 mb-8 text-center">Designed for enterprise trust.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {/* Principle 1 */}
@@ -64,8 +64,8 @@ export default function Security() {
       </section>
 
       {/* Core Controls */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[1000px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[1000px]">
           <h2 className="cv-h2 mb-8 text-center">Core security controls</h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
@@ -145,8 +145,8 @@ export default function Security() {
       </section>
 
       {/* Deployment Options */}
-      <section className="py-cv-sec-md border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-6 text-center">Deployment options</h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3 py-2 border-b border-white/10">
@@ -166,8 +166,8 @@ export default function Security() {
       </section>
 
       {/* Compliance Alignment */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px] text-center">
           <h2 className="cv-h2 mb-4">Compliance alignment</h2>
           <p className="text-sm text-cv-muted mb-6">
             CloudVerse is built to support common enterprise security reviews and compliance requirements.
@@ -187,8 +187,8 @@ export default function Security() {
       </section>
 
       {/* Data Handling & Privacy */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[800px]">
           <h2 className="cv-h2 mb-6 text-center">Data handling</h2>
           <div className="space-y-3">
             <div className="flex items-start gap-3">
@@ -208,8 +208,8 @@ export default function Security() {
       </section>
 
       {/* CTA */}
-      <section className="py-cv-sec-lg border-t border-cv-line">
-        <div className="max-w-[760px] mx-auto px-6 lg:px-12 text-center">
+      <section className="py-14 sm:py-16 lg:py-20 border-t border-cv-line">
+        <div className="cv-container max-w-[760px] text-center">
           <h2 className="cv-h2 mb-3">Need a security review?</h2>
           <p className="text-sm text-cv-muted mb-6">
             We can share security documentation and answer vendor questionnaires.
