@@ -68,11 +68,11 @@ export default function Home() {
 
       {/* Customer Logos */}
       <section className="py-8 lg:py-10">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
           <p className="text-center text-[15px] leading-[24px] text-cv-muted mb-8">
             Used by FinOps teams at leading enterprises.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 place-items-center gap-x-12 gap-y-10">
             {customerLogos.map((logo) => (
               <img
                 key={logo.name}
@@ -81,7 +81,7 @@ export default function Home() {
                 alt={logo.name}
                 loading="lazy"
                 decoding="async"
-                className={`h-7 md:h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity dark:hidden ${logo.className || ""}`}
+                className={`h-8 w-auto object-contain opacity-80 grayscale dark:hidden ${logo.className || ""}`}
               />
             ))}
             {customerLogos.filter(l => l.srcDark).map((logo) => (
@@ -91,7 +91,7 @@ export default function Home() {
                 alt={logo.name}
                 loading="lazy"
                 decoding="async"
-                className={`hidden dark:inline h-7 md:h-8 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity ${logo.className || ""}`}
+                className={`hidden dark:inline h-8 w-auto object-contain opacity-80 grayscale ${logo.className || ""}`}
               />
             ))}
           </div>
