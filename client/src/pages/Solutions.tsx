@@ -1,5 +1,6 @@
 import { BaseLayout } from "@/layouts/BaseLayout";
 import { Button } from "@/components/Button";
+import { SolutionPreviewPanel } from "@/components/SolutionPreviewPanel";
 import { track } from "@/lib/track";
 import { Link } from "wouter";
 import { useEffect } from "react";
@@ -54,15 +55,17 @@ export default function Solutions() {
                 </li>
               </ul>
             </div>
-            {/* Right: Visual anchor */}
+            {/* Right: Preview Panel */}
             <div className="hidden lg:block">
-              <div className="h-[280px] rounded-2xl border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 p-6 flex flex-col gap-4">
-                <div className="h-8 w-2/3 bg-cv-line/40 rounded-md"></div>
-                <div className="flex-1 flex flex-col gap-3">
-                  <div className="h-16 w-full bg-cv-line/30 rounded-lg"></div>
-                  <div className="h-20 w-full bg-cv-line/25 rounded-lg"></div>
-                </div>
-              </div>
+              <SolutionPreviewPanel
+                eyebrow="Finance View"
+                title="Close with confidence"
+                lines={[
+                  "Allocation-ready views",
+                  "Audit-friendly exports",
+                  "Savings tracked as realized"
+                ]}
+              />
             </div>
           </div>
         </div>
@@ -72,15 +75,17 @@ export default function Solutions() {
       <section className="py-cv-sec-md border-t border-cv-line">
         <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Visual anchor */}
+            {/* Left: Preview Panel */}
             <div className="hidden lg:block order-last lg:order-first">
-              <div className="h-[280px] rounded-2xl border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 p-6 flex flex-col gap-4">
-                <div className="h-8 w-2/3 bg-cv-line/40 rounded-md"></div>
-                <div className="flex-1 flex flex-col gap-3">
-                  <div className="h-16 w-full bg-cv-line/30 rounded-lg"></div>
-                  <div className="h-20 w-full bg-cv-line/25 rounded-lg"></div>
-                </div>
-              </div>
+              <SolutionPreviewPanel
+                eyebrow="Engineering View"
+                title="Cost context before it ships"
+                lines={[
+                  "Service + environment signals",
+                  "Actionable recommendations",
+                  "Clear ownership mapping"
+                ]}
+              />
             </div>
             {/* Right: Text */}
             <div className="max-w-[640px]">
@@ -142,15 +147,17 @@ export default function Solutions() {
                 </li>
               </ul>
             </div>
-            {/* Right: Visual anchor */}
+            {/* Right: Preview Panel */}
             <div className="hidden lg:block">
-              <div className="h-[280px] rounded-2xl border border-white/10 dark:border-white/10 bg-white/5 dark:bg-white/5 p-6 flex flex-col gap-4">
-                <div className="h-8 w-2/3 bg-cv-line/40 rounded-md"></div>
-                <div className="flex-1 flex flex-col gap-3">
-                  <div className="h-16 w-full bg-cv-line/30 rounded-lg"></div>
-                  <div className="h-20 w-full bg-cv-line/25 rounded-lg"></div>
-                </div>
-              </div>
+              <SolutionPreviewPanel
+                eyebrow="Platform View"
+                title="Governance at scale"
+                lines={[
+                  "Normalized dimensions",
+                  "Guardrails for safe automation",
+                  "Access controls + auditability"
+                ]}
+              />
             </div>
           </div>
         </div>
