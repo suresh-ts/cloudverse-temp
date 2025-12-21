@@ -1,89 +1,250 @@
 import { BaseLayout } from "@/layouts/BaseLayout";
-import { Section } from "@/components/Section";
-import { useState } from "react";
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
-import { Check } from "lucide-react";
 import { track } from "@/lib/track";
+import { Link } from "wouter";
+import { useEffect } from "react";
 
 export default function Pricing() {
-  const [billing, setBilling] = useState<"monthly" | "annual">("annual");
+  useEffect(() => {
+    document.title = "Pricing — CloudVerse™";
+  }, []);
+
+  const plans = [
+    {
+      name: "Starter",
+      description: "Get started with visibility across AWS.",
+      price: "$0",
+      billingUnit: "per month",
+      cta: "Start free",
+      ctaVariant: "secondary" as const,
+      limits: ["Up to $10k cloud spend", "1 user", "AWS only"]
+    },
+    {
+      name: "Professional",
+      description: "Multi-cloud visibility, allocation, and automation.",
+      price: "$499",
+      billingUnit: "per month, billed annually",
+      cta: "Book a demo",
+      ctaVariant: "primary" as const,
+      limits: ["Up to $500k cloud spend", "5 users", "AWS, Azure, GCP", "Cost allocation"]
+    },
+    {
+      name: "Enterprise",
+      description: "Custom pricing for complex environments.",
+      price: "Contact sales",
+      billingUnit: "",
+      cta: "Contact sales",
+      ctaVariant: "secondary" as const,
+      limits: ["Unlimited cloud spend", "Unlimited users", "All platforms", "Custom features"]
+    }
+  ];
+
+  const capabilities = [
+    "Visibility & reporting",
+    "Allocation & chargeback",
+    "Detected + predicted anomalies",
+    "Automation-first optimization",
+    "Developer FinOps (shift-left)",
+    "Autonomous tag normalization",
+    "Enterprise access controls",
+    "Audit logs and governance"
+  ];
 
   return (
     <BaseLayout>
-      <Section className="pt-32 text-center">
-        <h1 className="mb-6">Simple, transparent pricing.</h1>
-        <p className="text-xl text-muted-foreground mb-12">Start free, upgrade as you grow.</p>
-
-        {/* Toggle Island */}
-        <div className="inline-flex bg-secondary p-1 rounded-full mb-16">
-          <button
-            onClick={() => { setBilling("monthly"); track("pricing_toggle", { value: "monthly" }); }}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-              billing === "monthly" ? "bg-white shadow-sm" : "text-muted-foreground"
-            }`}
-          >
-            Monthly
-          </button>
-          <button
-            onClick={() => { setBilling("annual"); track("pricing_toggle", { value: "annual" }); }}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
-              billing === "annual" ? "bg-white shadow-sm" : "text-muted-foreground"
-            }`}
-          >
-            Annual <span className="text-green-600 text-xs ml-1 font-bold">-20%</span>
-          </button>
+      {/* Hero */}
+      <section className="py-cv-sec-lg">
+        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center space-y-4 sm:space-y-6">
+          <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
+            Pricing
+          </span>
+          <h1 className="cv-h1">Simple pricing that scales with you.</h1>
+          <p className="text-[15px] sm:text-[16px] lg:text-[17px] leading-[24px] sm:leading-[26px] lg:leading-[28px] text-cv-muted">
+            CloudVerse pricing is designed for enterprise environments—clear, predictable, and aligned to real usage.
+          </p>
         </div>
+      </section>
 
-        <div className="grid md:grid-cols-3 gap-8 text-left">
-          {/* Starter */}
-          <Card className="relative">
-            <h3 className="text-xl font-bold mb-2">Starter</h3>
-            <div className="text-3xl font-bold mb-6">
-              $0 <span className="text-base font-normal text-muted-foreground">/mo</span>
-            </div>
-            <ul className="space-y-3 mb-8">
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> Up to $10k cloud spend</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> 1 User</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> AWS Only</li>
-            </ul>
-            <Button className="w-full" variant="outline">Start Free</Button>
-          </Card>
-
-          {/* Professional */}
-          <Card className="border-primary ring-1 ring-primary/10 bg-primary/5">
-            <div className="absolute top-0 right-0 bg-primary text-white text-xs px-3 py-1 rounded-bl-xl rounded-tr-xl font-medium">
-              Popular
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-primary">Professional</h3>
-            <div className="text-3xl font-bold mb-6">
-              {billing === 'annual' ? '$499' : '$599'} <span className="text-base font-normal text-muted-foreground">/mo</span>
-            </div>
-            <ul className="space-y-3 mb-8">
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> Up to $500k cloud spend</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> 5 Users</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> AWS, Azure, GCP</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> Cost Allocation</li>
-            </ul>
-            <Button className="w-full">Get Started</Button>
-          </Card>
-
-          {/* Enterprise */}
-          <Card>
-            <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-            <div className="text-3xl font-bold mb-6">
-              Custom
-            </div>
-            <ul className="space-y-3 mb-8">
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> Unlimited spend</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> Unlimited Users</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> SSO & RBAC</li>
-               <li className="flex items-center gap-3 text-sm"><Check className="w-4 h-4 text-primary"/> Dedicated Success Manager</li>
-            </ul>
-            <Button className="w-full" variant="secondary">Contact Sales</Button>
-          </Card>
+      {/* Pricing Plans */}
+      <section className="py-cv-sec-lg border-t border-cv-line">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {plans.map((plan, idx) => (
+              <div key={idx} className="p-8 rounded-2xl border border-white/10 dark:border-white/10 bg-white/2.5 dark:bg-white/2.5 flex flex-col">
+                <h3 className="text-xl font-semibold text-cv-ink dark:text-cv-ink mb-2">
+                  {plan.name}
+                </h3>
+                <p className="text-sm text-cv-muted mb-6">
+                  {plan.description}
+                </p>
+                <div className="mb-8">
+                  <div className="text-3xl font-semibold text-cv-ink dark:text-cv-ink">
+                    {plan.price}
+                  </div>
+                  {plan.billingUnit && (
+                    <div className="text-xs text-cv-muted mt-1">
+                      {plan.billingUnit}
+                    </div>
+                  )}
+                </div>
+                <div className="flex-1 mb-8">
+                  <ul className="space-y-2">
+                    {plan.limits.map((limit, limitIdx) => (
+                      <li key={limitIdx} className="text-sm text-cv-muted">
+                        • {limit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Link href="/demo" onClick={() => track("pricing_cta", { plan: plan.name, location: "pricing_plans" })}>
+                  <Button variant={plan.ctaVariant} size="lg" className="w-full">
+                    {plan.cta}
+                  </Button>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-cv-sec-lg border-t border-cv-line">
+        <div className="max-w-[1600px] mx-auto px-6 lg:px-12">
+          <h2 className="cv-h2 mb-10 text-center">What's included with CloudVerse</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {capabilities.map((cap, idx) => (
+              <div key={idx} className="text-sm text-cv-muted">
+                {cap}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Usage & Scale */}
+      <section className="py-cv-sec-lg border-t border-cv-line">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+          <h2 className="cv-h2 mb-6 text-center">Designed for enterprise scale.</h2>
+          <p className="text-[15px] leading-[24px] text-cv-muted mb-6 text-center">
+            CloudVerse supports multi-account, multi-org, and multi-cloud environments. Pricing scales with usage and complexity—not arbitrary limits.
+          </p>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Multi-cloud and multi-platform support</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Large org hierarchies and shared services</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Safe automation with guardrails</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">No impact on production workloads</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Enterprise & Custom */}
+      <section className="py-cv-sec-lg border-t border-cv-line">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+          <h2 className="cv-h2 mb-3 text-center">Enterprise and custom deployments</h2>
+          <p className="text-sm text-cv-muted mb-6 text-center">
+            For complex environments, CloudVerse offers custom pricing and deployment options aligned to your architecture and governance needs.
+          </p>
+          <div className="space-y-3 mb-8">
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Custom onboarding and data modeling</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Advanced automation workflows</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Dedicated support options</span>
+            </div>
+            <div className="flex items-start gap-3">
+              <span className="text-primary font-semibold mt-1 flex-shrink-0">•</span>
+              <span className="text-sm text-cv-muted">Security and compliance reviews</span>
+            </div>
+          </div>
+          <div className="text-center">
+            <Link href="/contact" onClick={() => track("pricing_contact_sales", { location: "pricing_enterprise" })}>
+              <Button variant="secondary" size="lg">
+                Contact sales
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-cv-sec-lg border-t border-cv-line">
+        <div className="max-w-[800px] mx-auto px-6 lg:px-12">
+          <h2 className="cv-h2 mb-10 text-center">Questions?</h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "How is pricing calculated?",
+                a: "Pricing is based on usage and environment complexity. We'll review this with you during onboarding."
+              },
+              {
+                q: "Do you support multi-cloud pricing?",
+                a: "Yes—pricing supports environments spanning multiple clouds and platforms."
+              },
+              {
+                q: "Are there limits on accounts or teams?",
+                a: "CloudVerse is designed for enterprise scale. Limits, if any, depend on plan and usage."
+              },
+              {
+                q: "Can we start small and scale?",
+                a: "Yes—most customers start with visibility and expand into automation."
+              },
+              {
+                q: "Is support included?",
+                a: "Standard support is included. Advanced support options are available."
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="pb-6 border-b border-cv-line dark:border-cv-line last:border-b-0">
+                <h3 className="text-sm font-semibold text-cv-ink dark:text-cv-ink mb-2">
+                  {faq.q}
+                </h3>
+                <p className="text-sm text-cv-muted">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-cv-sec-lg border-t border-cv-line">
+        <div className="max-w-[720px] mx-auto px-6 lg:px-12 text-center">
+          <h2 className="cv-h2 mb-3">See CloudVerse on your data.</h2>
+          <p className="text-sm text-cv-muted mb-6">
+            We'll walk through your environment and recommend the right plan.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Link href="/demo" onClick={() => track("cta_demo", { location: "pricing_bottom" })}>
+              <Button size="lg" className="w-full sm:w-auto">
+                Book a demo
+              </Button>
+            </Link>
+            <Link href="/contact" onClick={() => track("cta_contact_sales", { location: "pricing_bottom" })}>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                Contact sales
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </BaseLayout>
   );
 }
