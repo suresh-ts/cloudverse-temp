@@ -2,6 +2,7 @@ import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { track } from "@/lib/track";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
@@ -69,6 +70,7 @@ export function SiteNav() {
               Book a demo
             </a>
           </Link>
+          <ModeToggle />
         </div>
       </div>
     </nav>

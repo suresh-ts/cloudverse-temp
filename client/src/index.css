@@ -38,7 +38,7 @@
 :root {
   /* Apple Developer-esque Palette - Refined */
   
-  /* Core Colors */
+  /* Core Colors - Light Mode Default */
   --cv-ink: 240 3% 12%;       /* #1d1d1f - Near Black */
   --cv-muted: 240 2% 46%;     /* #86868b - Muted Text */
   --cv-line: 240 5% 90%;      /* #e5e5e5 - Subtle Border */
@@ -68,6 +68,38 @@
   --input: 240 5% 90%;
   --ring: 211 100% 50%;
   --radius: 20px;
+}
+
+.dark {
+  /* Dark Mode Palette - Apple Developer Dark */
+  --cv-ink: 0 0% 98%;         /* #f5f5f7 - Off White Text */
+  --cv-muted: 240 2% 63%;     /* #a1a1a6 - Muted Text */
+  --cv-line: 240 5% 26%;      /* #38383a - Subtle Border */
+  --cv-surface: 0 0% 0%;      /* #000000 - Pure Black */
+  --cv-surface2: 240 4% 11%;  /* #1c1c1e - Dark Grey/Card BG */
+
+  /* Functional Mappings for Dark */
+  --primary: 211 100% 50%;    /* Keep Blue */
+  --primary-foreground: 0 0% 100%;
+
+  /* Shadcn Compat Dark */
+  --background: 0 0% 0%;
+  --foreground: 0 0% 98%;
+  --card: 240 4% 11%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 4% 11%;
+  --popover-foreground: 0 0% 98%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 2% 63%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5% 26%;
+  --input: 240 5% 26%;
+  --ring: 211 100% 50%;
 }
 
 @layer base {
