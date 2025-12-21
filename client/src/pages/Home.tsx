@@ -177,7 +177,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 w-full hidden md:block">
-            <div className="aspect-[4/3] w-full rounded-cv bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line"></div>
+            <img src="/assets/cloudverse-import/images/home/DashBoard/SVG.svg" alt="Developer FinOps Dashboard" className="w-full h-auto rounded-cv border border-cv-line object-cover" />
           </div>
         </div>
       </Section>
@@ -202,7 +202,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 w-full hidden md:block">
-            <div className="aspect-[4/3] w-full rounded-cv bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line"></div>
+            <img src="/assets/cloudverse-import/images/home/DashBoard/SVG%20(1).svg" alt="Tag Engine Dashboard" className="w-full h-auto rounded-cv border border-cv-line object-cover" />
           </div>
         </div>
       </Section>
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1 w-full hidden md:block">
-            <div className="aspect-[4/3] w-full rounded-cv bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line"></div>
+            <img src="/assets/cloudverse-import/images/home/DashBoard/SVG%20(2).svg" alt="Anomalies and Automation" className="w-full h-auto rounded-cv border border-cv-line object-cover" />
           </div>
         </div>
       </Section>
