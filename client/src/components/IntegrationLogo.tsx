@@ -39,7 +39,7 @@ export function IntegrationLogo({ name, logo, size = 22 }: IntegrationLogoProps)
     <img
       src={logo.src}
       alt={logo.alt}
-      className={`rounded-full object-contain opacity-90 ${logo.invert ? 'dark:invert' : ''}`}
+      className="object-contain dark:brightness-0 dark:invert"
       style={{ height: size, width: size }}
       onError={() => setImgFailed(true)}
       aria-label={`${name} logo`}
