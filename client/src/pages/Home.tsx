@@ -62,7 +62,7 @@ export default function Home() {
           <p className="text-center text-[15px] leading-[24px] text-cv-muted mb-6">
             Used by FinOps teams at leading enterprises.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 grayscale opacity-70">
+          <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 grayscale opacity-70 dark:opacity-100 dark:invert">
             <img 
               src="/assets/cloudverse-import/images/partners/drreddy.svg" 
               alt="Dr. Reddy's" 
