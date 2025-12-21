@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { Badge } from "@/components/Badge";
+import { cn } from "@/lib/utils";
 
 const integrations = [
   { name: "AWS", category: "Cloud", icon: "/assets/cloudverse-import/images/integration/awstop.svg" },
