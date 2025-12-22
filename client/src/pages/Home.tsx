@@ -13,6 +13,14 @@ const customerLogos = [
   { name: "SISL Infotech", srcLight: "/logos/logo-1-1-sisl.svg", srcDark: "/logos/logo-light-sisl.svg", className: "" },
 ];
 
+const heroOutcomes = [
+  { title: "Unified Cost Visibility", desc: "Real-time view across all clouds and services" },
+  { title: "Automated Optimization", desc: "AI-driven cost reduction and waste prevention" },
+  { title: "Compliance Ready", desc: "Audit trails, access controls, and deployment options" },
+  { title: "Real-time Anomalies", desc: "Detect and predict cost spikes before impact" },
+  { title: "Multi-cloud Native", desc: "Support for AWS, Azure, GCP, and emerging platforms" },
+];
+
 export default function Home() {
   useEffect(() => {
     document.title = "CloudVerse™ — Cloud Financial Management";
@@ -20,23 +28,30 @@ export default function Home() {
 
   return (
     <BaseLayout>
-      {/* Hero - Wide Layout with Motion Background */}
+      {/* Hero - Premium AIX-style Layout */}
       <section className="pt-28 sm:pt-28 lg:pt-36 pb-24 sm:pb-24 lg:pb-32 relative overflow-hidden">
         <div className="hero-motion-bg absolute inset-0 -z-10" aria-hidden="true" />
         <div className="cv-container-full relative z-10">
-          <div className="flex flex-col items-center gap-12 lg:gap-16 lg:items-stretch lg:flex-row">
-            {/* Copy Block */}
-            <div className="flex-1 text-left space-y-6 max-w-[42rem] flex flex-col justify-center">
+          <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
+            {/* Left: Copy Block */}
+            <div className="flex-1 text-left space-y-6 flex flex-col justify-center max-w-[44rem]">
               <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
                 CloudVerse™
               </span>
               <h1 className="cv-h1">
                 Cloud financial management for modern enterprises.
               </h1>
-              <p className="max-w-[600px] text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[30px] text-white/70">
+              <p className="text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[30px] text-white/70">
                 Visibility, allocation, anomalies, and automated optimization across cloud, data, and AI platforms.
               </p>
-              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mt-10">
+              
+              {/* Deployment note */}
+              <p className="text-[13px] sm:text-[14px] text-white/60 border-l-2 border-white/20 pl-4">
+                Private deployment and air-gapped options available for regulated environments.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mt-6">
                 <Link href="/demo" data-track="cta_demo" onClick={() => track("cta_demo", { location: "hero" })}>
                   <Button size="lg" className="w-full sm:w-auto">
                     Book a demo
@@ -47,6 +62,40 @@ export default function Home() {
                     Watch 90-second tour
                   </Button>
                 </Link>
+              </div>
+            </div>
+
+            {/* Right: Window Card with Outcomes */}
+            <div className="w-full lg:flex-1 lg:max-w-[640px] flex items-center">
+              <div className="w-full rounded-[28px] border border-white/10 bg-white/4 backdrop-blur-sm overflow-hidden">
+                {/* Window Header */}
+                <div className="bg-white/5 px-5 sm:px-6 py-3 sm:py-4 border-b border-white/10 flex items-center gap-2.5">
+                  {/* Traffic lights */}
+                  <div className="flex gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-red-400/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-yellow-400/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-green-400/80"></div>
+                  </div>
+                  <span className="text-[11px] sm:text-[12px] font-semibold tracking-widest text-white/50 uppercase ml-auto">
+                    CloudVerse™ Outcomes
+                  </span>
+                </div>
+
+                {/* Window Content */}
+                <div className="p-5 sm:p-6 space-y-4 sm:space-y-5">
+                  {heroOutcomes.map((outcome, idx) => (
+                    <div key={idx} className="flex gap-3">
+                      <div className="flex-1">
+                        <h4 className="text-[13px] sm:text-[14px] font-semibold text-blue-400 mb-1">
+                          {outcome.title}
+                        </h4>
+                        <p className="text-[12px] sm:text-[13px] text-gray-400">
+                          {outcome.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
