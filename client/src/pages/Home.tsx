@@ -21,20 +21,21 @@ export default function Home() {
   return (
     <BaseLayout>
       {/* Hero - Wide Layout */}
-      <section className="pt-24 sm:pt-28 lg:pt-32 pb-14 sm:pb-16 lg:pb-20">
+      <section className="pt-28 sm:pt-28 lg:pt-36 pb-24 sm:pb-24 lg:pb-32">
         <div className="cv-container-full">
-          <div className="flex flex-col lg:flex-row items-center gap-8 sm:gap-10 lg:gap-16">
-            <div className="flex-1 text-left space-y-4 sm:space-y-6 max-w-[620px]">
+          <div className="flex flex-col items-center gap-12 lg:gap-16 lg:items-stretch lg:flex-row">
+            {/* Copy Block */}
+            <div className="flex-1 text-left space-y-6 max-w-[42rem] flex flex-col justify-center">
               <span className="cv-cap font-semibold tracking-widest text-cv-muted uppercase">
                 CloudVerse™
               </span>
               <h1 className="cv-h1">
                 Cloud financial management for modern enterprises.
               </h1>
-              <p className="text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[30px] text-cv-muted">
+              <p className="max-w-[600px] text-[15px] sm:text-[16px] lg:text-[18px] leading-[24px] sm:leading-[26px] lg:leading-[30px] text-white/70">
                 Visibility, allocation, anomalies, and automated optimization across cloud, data, and AI platforms.
               </p>
-              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mt-10">
                 <Link href="/demo" data-track="cta_demo" onClick={() => track("cta_demo", { location: "hero" })}>
                   <Button size="lg" className="w-full sm:w-auto">
                     Book a demo
@@ -48,11 +49,12 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex-1 w-full hidden md:block">
-              <div className="aspect-[4/3] w-full rounded-cv bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line overflow-hidden">
+            {/* Visual Block */}
+            <div className="w-full lg:flex-1 lg:max-w-[600px]">
+              <div className="w-full aspect-[4/3] rounded-2xl bg-[#F5F5F7] dark:bg-cv-surface2 border border-cv-line overflow-hidden">
                 <img 
-                  src="/assets/cloudverse-import/images/hero.jpg" 
-                  alt="CloudVerse dashboard" 
+                  src="/assets/cloudverse-import/images/hero-abstract.jpg" 
+                  alt="Cloud systems intelligence and control" 
                   className="w-full h-full object-cover"
                 />
               </div>
